@@ -3,13 +3,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Base styles for desktop */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
-    font-size: 16px; /* Adjust as needed */
-    line-height: 1.6; /* Improve readability */
-    color: #333; /* Ensure good contrast with background */
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    /* other styles */
+}
+
+/* Styles for devices with max width of 768px (tablets) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack header items vertically */
+    }
+    .logo img {
+        max-width: 100px; /* Adjust logo size */
+    }
+    .banner-content h2 {
+        font-size: 24px; /* Adjust font size */
+    }
+}
+
+/* Styles for devices with max width of 480px (phones) */
+@media (max-width: 480px) {
+    .header {
+        text-align: center; /* Center align header items */
+    }
+    .logo img {
+        max-width: 80px; /* Further adjust logo size */
+    }
+    .banner-content h2 {
+        font-size: 20px; /* Further adjust font size */
+    }
+    .gallery-item {
+        width: 100%; /* Ensure gallery items take full width */
+    }
 }
 
 /* General Header Styling */
@@ -523,4 +549,36 @@ footer {
     text-align: center;
     padding: 1em 0;
     margin-top: 2em;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide menu by default on mobile */
+    }
+    .nav-toggle {
+        display: block; /* Show toggle button */
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    flex: 1 1 200px; /* Adjust item width */
+    margin: 10px;
 }
